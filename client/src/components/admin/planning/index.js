@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
-import { Line } from "react-chartjs-2"
+import { Bar, Line } from "react-chartjs-2"
 import Chart from "react-apexcharts";
 
-import './storage_page.scss'
+import './planning_page.scss'
 
 
 export default function StoragePage() {
@@ -13,18 +13,18 @@ export default function StoragePage() {
     const optionsRadial = {
         plotOptions: {
             radialBar: {
-                startAngle: -135,
-                endAngle: 225,
+                startAngle: 0,
+                endAngle: 540,
                 hollow: {
                     margin: 0,
                     size: "70%",
-                    background: "#fff",
+                    background: "transparent",
                     image: undefined,
                     imageOffsetX: 0,
                     imageOffsetY: 0,
                     position: "front",
                     dropShadow: {
-                        enabled: true,
+                        enabled: false,
                         top: 3,
                         left: 0,
                         blur: 4,
@@ -33,10 +33,10 @@ export default function StoragePage() {
                 },
                 track: {
                     background: "#fff",
-                    strokeWidth: "67%",
+                    strokeWidth: "100%",
                     margin: 0, // margin is in pixels
                     dropShadow: {
-                        enabled: true,
+                        enabled: false,
                         top: -3,
                         left: 0,
                         blur: 4,
@@ -48,16 +48,16 @@ export default function StoragePage() {
                     showOn: "always",
                     name: {
                         offsetY: -20,
-                        show: true,
+                        show: false,
                         color: "#888",
                         fontSize: "13px"
                     },
                     value: {
                         formatter: function (val) {
-                            return val;
+                            return val + '%';
                         },
-                        color: "#111",
-                        fontSize: "30px",
+                        color: "#FFFFFF",
+                        fontSize: "1.5rem",
                         show: true
                     }
                 }
@@ -69,7 +69,7 @@ export default function StoragePage() {
                 shade: "dark",
                 type: "horizontal",
                 shadeIntensity: 0.5,
-                gradientToColors: ["#ABE5A1"],
+                gradientToColors: ["#8056F4", "#183351"],
                 inverseColors: true,
                 opacityFrom: 1,
                 opacityTo: 1,
@@ -78,8 +78,7 @@ export default function StoragePage() {
         },
         stroke: {
             lineCap: "round"
-        },
-        labels: ["Percent"]
+        }
     }
     const seriesRadial = [76]
 
@@ -91,12 +90,6 @@ export default function StoragePage() {
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: 'rgb(26, 226, 202)',
                 borderColor: 'rgba(26, 226, 202, 0.2)',
-            },
-            {
-                label: 'Temperature 2',
-                data: [22, 12, 13, 25, 12, 33],
-                backgroundColor: 'rgb(255, 131, 150)',
-                borderColor: 'rgba(255, 131, 150, 0.2)',
             }
         ],
     };
@@ -141,34 +134,28 @@ export default function StoragePage() {
                 <div className="mixer element">
                     <p>Total</p>
                     <div className="chart">
-
+                        <Chart
+                            options={optionsRadial}
+                            series={seriesRadial}
+                            type="radialBar"
+                            width="280"
+                        />
                     </div>
                 </div>
                 <div className="user_space element">
-                    <p>User space</p>
+                    <p>Target future</p>
                     <div className="chart">
-                        <Chart
-                            options={optionsRadial}
-                            series={seriesRadial}
-                            type="radialBar"
-                            width="280"
-                        />
-                        <Chart
-                            options={optionsRadial}
-                            series={seriesRadial}
-                            type="radialBar"
-                            width="280"
-                        />
+                        <Bar data={dataOEE} options={optionsChartOee} />
                     </div>
                 </div>
                 <div className="temperature element">
-                    <p>Temperature</p>
+                    <p>Import material</p>
                     <div className="chart">
-                        <Line data={dataOEE} options={optionsChartOee} />
+                        <Bar data={dataOEE} options={optionsChartOee} />
                     </div>
                 </div>
                 <div className="history_production element">
-                    <p>History production</p>
+                    <p>Planning</p>
                     <div className="chart">
 
                     </div>
