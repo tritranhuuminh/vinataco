@@ -1,0 +1,312 @@
+@media all and (min-width: 320px) {
+    .auth {
+        height: 100vh;
+        min-height: 500px;
+        width: 100%;
+        font-size: 0.8rem;
+        color: #fff;
+        background: #1C224F;
+        display: flex;
+        align-items: center;
+
+        h2 {
+            margin-top: 80px;
+            text-transform: uppercase;
+            
+            letter-spacing: 0.8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .wrap {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 700px;
+            height: 100%;
+            max-height: 600px;
+            background: radial-gradient(50% 50% at 50% 50%, #00A6FF 0%, rgba(0, 166, 255, 0.7) 0.1%, rgba(255, 255, 255, 0) 100%);
+
+            .form {
+                position: relative;
+                z-index: 2;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                height: 100%;
+                width: 320px;
+                margin: 0 auto;
+
+                img {
+                    margin: 20px 0;
+                    height: 50px;
+                }
+
+                label {
+                    margin-top: 17px;
+                    margin-left: 20px;
+                    font-weight: 500;
+                }
+
+                input {
+                    margin: 5px 0 10px 0;
+                    width: 200px;
+                    height: 2rem;
+                    border: none;
+                    outline: none;
+                    padding: 0 10px;
+                    display: flex;
+                    justify-content: center;
+                
+                    background: #ffffff;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.356);
+                    border-radius: 50px;
+                
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                }
+
+                input:focus {
+                    background: #cdf1ffec;
+                    box-shadow: 2px 7px 6px rgba(0, 0, 0, 0.541);
+                    outline: none;
+                    font-size: 10px;
+                }
+
+                input:focus::placeholder {
+                    color: rgba(255, 0, 0, 0);
+                }
+
+                input::placeholder {
+                    color: rgb(192, 192, 192);
+                    font-weight: 400;
+                    font-size: 13px;
+                }
+
+                .wrap_button {
+                    margin-top: 20px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+
+                    button {
+                        width: 200px;
+                        height: 2rem;
+                        color: #fff;
+                        text-transform: uppercase;
+                        background: #FF647C;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                        border-radius: 50px;
+                    
+                        font-weight: 700;
+                    }
+
+                    button:hover {
+                        background: #cf5063;
+                        box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.171);
+                    }
+
+                }
+
+                p {
+                    margin-top: 10px;
+
+                    .link_signup {
+                        margin-left: 10px;
+                        padding-left: 10px;
+                        border-left: #fff solid 2px;
+                    }
+                }
+
+                .social {
+                    position: relative;
+                    width: 100%;
+                    margin: 10px auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .login_with{
+                        margin-left: -10px;
+                        margin-right: 60px;
+                        margin-top: 10px !important;
+                        width: 50px !important;    
+                        height: 50px !important;
+                        border-radius: 50px !important;
+                        background-image: url("/google.png") !important;
+                        background-size: 30px 30px !important;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    
+                        overflow: hidden;
+                        border: 2px solid white ;
+
+                        div {
+                            display: none !important;
+                        }
+
+                        span{
+                            display: none !important;
+                        }
+                        
+                    }
+
+                    .login_with:hover{
+                        background-color: rgb(230, 230, 230) !important;
+                        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.384) !important;
+                        transform: scale(1.1);
+                        transition: 300ms;
+                    }
+
+                    .kep-login-facebook {
+                        position: absolute;
+                        margin-top: 10px !important;
+                        margin-left: -40px !important;
+                        width: 50px !important;
+                        height: 50px !important;
+                        border-radius: 50px !important;
+
+                        color: #ffffff00 !important;
+                        background-color: #ffffff !important;
+                        background-image: url("/facebook.png") !important;
+                        background-size: 50px 50px !important;
+                        background-position: center;
+                        
+                        overflow: hidden !important;
+                        border: 2px solid white !important;
+                    }
+
+                    .kep-login-facebook:hover {
+                        background-color: rgb(230, 230, 230) !important;
+                        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.384);
+                        transform: scale(1.1);
+                        transition: 300ms;
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
+@media (min-width: 860px) {
+    .auth {
+        min-height: 700px;
+        font-size: 1rem;
+
+        h2 {
+            margin-top: 80px;
+            font-size: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 800px;
+            max-height: 800px;
+            min-height: 700px;
+
+            .form {
+                height: 100%;
+                width: 100%;
+
+                img {
+                    margin: 20px 0;
+                    height: 70px;
+                }
+
+                label {
+                    margin-left: 30px;
+                }
+
+                input {
+                    padding: 0 20px;
+                    margin: 5px 0 10px 0;
+                    width: 360px;
+                    height: 45px;
+                
+                    letter-spacing: 0.1rem;
+                    font-weight: 700;
+                }
+
+                input:focus {
+                    font-size: 0.9rem;
+                }
+
+                input::placeholder {
+                    padding-left: 5px;
+                    font-size: 15px;
+                }
+
+                .wrap_button {
+                    margin-top: 30px;
+
+                    button {
+                        width: 360px;
+                        height: 45px;
+                        font-size: 1.1rem;
+                    }
+                }
+
+                .social {
+                    margin: 20px auto;
+
+                    .login_with{
+                        margin-left: -20px;
+                        margin-right: 60px;
+                        margin-top: 20px !important;
+                        width: 60px !important;    
+                        height: 60px !important;
+                        border-radius: 60px !important;
+                        background-size: 40px 40px !important;
+                    }
+
+                    .kep-login-facebook {
+                        position: absolute;
+                        margin-top: 20px !important;
+                        margin-left: -40px !important;
+                        width: 60px !important;
+                        height: 60px !important;
+                        border-radius: 60px !important;
+
+                        color: #ffffff00 !important;
+                        background-color: #ffffff !important;
+                        background-image: url("/facebook.png") !important;
+                        background-size: 60px 60px !important;
+                        background-position: center;
+                        
+                        overflow: hidden !important;
+                        border: 2px solid white !important;
+                    }
+                }
+            }            
+        }
+    }
+}
+
+.auth .check_form {
+    width: 600px;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+.auth .check_title {
+    font-size: 1.7rem;
+}

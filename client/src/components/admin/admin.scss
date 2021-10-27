@@ -1,0 +1,23 @@
+#admin_page {
+    width: 100%;
+    min-width: 1000px;
+    height: 100vh;
+    min-height: 550px;
+    background: #1C224F;
+
+    display: flex;
+}
+
+@media only screen and (max-height: 550px) {
+    #admin_page {
+        width: 100vw;
+        min-width: 500px;
+        height: 100%;
+        min-height: 700px;
+        background: #1C224F;
+    
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+    }
+}

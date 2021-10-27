@@ -1,0 +1,144 @@
+.culter_page {
+    width: 100%;
+    height: 100%; 
+    padding: 10px;
+
+    h3 {
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+    
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        text-indent: 5px;
+    }
+
+    .data {
+        width: 100%;
+        height: calc(100% - 50px);
+        display: grid;
+        grid-template-columns: 1.5fr 2fr 2fr;
+        grid-template-rows: repeat(2, minmax(100px, 1fr));
+        grid-gap: 5px;
+
+        p {
+            margin: 10px 20px;
+            color: #66B5F8;
+        }
+
+        .element {
+            background: #242B61;
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .weights {
+            .chart {
+                height: 80%;
+            }
+        }
+
+        .history_production {
+            background: none;
+            box-shadow: none;
+            grid-column-start: 2;
+            grid-column-end: 4;
+
+            table {
+                margin: 0 auto;
+                color: #fff;
+                width: 98%;
+                height: calc(100% - 50px);
+                border-spacing: 0 1px;
+                tbody {
+                    height: 50%;
+                    width: 100%;
+                    display: block;
+                    overflow: auto;
+                    display: table;
+                }
+                .id {
+                    width: 15%;
+                    text-align: center;
+                }
+        
+                .time {
+                    width: 22%;
+                    text-align: left;
+                }
+        
+                .quantity {
+                    width: 20%;
+                    text-align: left;
+                }
+        
+                .performance {
+                    text-align: left;
+                }
+                .code {
+                    width: 20%;
+                    text-align: center;
+                }
+        
+                th {
+                    background: #1C224F;
+                }
+        
+                tr {
+                    // height: 20px;
+                    width: 100%;
+                    display: table;
+                }
+        
+                .tr1 {
+                    background: none;
+                }
+        
+                .tr2 {
+                    background: #3F477E;
+                }
+            }
+        }
+
+        .parameters {
+            height: 100%;
+            .chart {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+                div {
+                    height: 80%;
+                    width: 100%;
+                }
+                canvas {
+                    // height: 100% !important;
+                    width: 100% !important;
+                }
+            }
+        }
+
+        .quality {
+
+            .chart {
+                height: 85%;
+            }
+        }
+    }
+
+    .doughnut {
+        width: 50% !important;
+        height: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 812px) {
+    .culter_page {
+        .data {
+            display: inline;
+        }
+    }
+}
