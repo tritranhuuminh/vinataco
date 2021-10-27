@@ -28,7 +28,6 @@ export default function Dashboard() {
                     <Schedule />
                     <Storage />
                 </div>
-
                 <Environment />
                 <Energy />
                 <History />
