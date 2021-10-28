@@ -10,12 +10,14 @@ import NotFound from '../utils/NotFound/NotFound'
 
 import './admin.scss'
 
+
+
 import { useSelector } from 'react-redux'
+
 
 function Admin() {
     const auth = useSelector(state => state.auth)
     const { isLogged, isAdmin } = auth
-
     // {
     //     if (isAdmin) 
     return (

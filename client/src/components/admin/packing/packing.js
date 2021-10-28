@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, {useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { Doughnut, Bar, Line, Pie } from "react-chartjs-2"
 import Mixer from "./mixer"
@@ -7,9 +7,26 @@ import OEEhistory from "./oeehistory"
 
 import './packing_page.scss'
 
+import socketIOClient from "socket.io-client";
+const host = "http://localhost:5000";
 
 export default function PackingPage() {
     const auth = useSelector(state => state.auth)
+
+    const [data, setData] = useState({ mixer: 0 })
+
+    const socketRef = useRef()
+    useEffect(() => {
+        socketRef.current = socketIOClient.connect(host)
+        socketRef.current.on('sendDataServer', data => {
+            setData({ mixer: data.tempCulture1.toFixed(2)});
+            console.log(data)
+        })
+        return () => {
+            socketRef.current.disconnect();
+        };
+    }, []);
+
     const dataQuality = {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
         datasets: [
@@ -65,7 +82,7 @@ export default function PackingPage() {
             <h3>packing area</h3>
             <div className="data">
                 <div className="row_1">
-                    <Mixer />
+                    <Mixer dataRT={data.mixer} />
                     <div className="oee_realtime element">
                         <p>OEE realtime</p>
                         <div className="chart">

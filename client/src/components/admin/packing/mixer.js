@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Chart from "react-apexcharts";
 
-export default function Energy() {
+export default function Energy(props) {
     const optionsRadial = {
         plotOptions: {
             radialBar: {
@@ -73,7 +73,7 @@ export default function Energy() {
             lineCap: "round"
         }
     }
-    const seriesRadial = [76]
+    const seriesRadial = [props.dataRT]
 
     return (
         <div className="mixer element">
